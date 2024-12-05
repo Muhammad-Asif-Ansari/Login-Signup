@@ -1,8 +1,14 @@
 var inputName = document.getElementById("inputName")
 var inputPassword = document.getElementById("inputPassword")
 function signup(){
-    // console.log(userName.value);
-    // console.log(password.value);
+    if (inputName.value.trim() === "" || inputPassword.value.trim() === "") {
+        Swal.fire({
+          icon: "error",
+          title: "Empty Fields!",
+          text: "Please fill in all fields before signing up.",
+        });
+        return;
+      }
 localStorage.setItem("inputName",inputName.value)
 localStorage.setItem("inputPassword",inputPassword.value)
 inputName.value = ""
@@ -23,6 +29,14 @@ var password = document.getElementById("password").value
 var inputValue = localStorage.getItem("inputName")
 var inputValuePassword = localStorage.getItem("inputPassword")
 
+if (userName.trim() === "" || password.trim() === "") {
+    Swal.fire({
+      icon: "error",
+      title: "Empty Fields!",
+      text: "Please fill in all fields before logging in.",
+    });
+    return; // Stop further execution
+  }
 
 if(userName === inputValue && password === inputValuePassword ){
     Swal.fire({
@@ -41,3 +55,6 @@ else{
         footer: '<a href="#">Why do I have this issue?</a>'
       });
 }}
+
+
+
