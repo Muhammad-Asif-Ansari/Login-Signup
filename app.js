@@ -50,7 +50,7 @@ if(userName === inputValue && password === inputValuePassword ){
 else{
     Swal.fire({
         icon: "error",
-        title: "Oops...",
+        title: "Invalid Email or Password",
         text: "Login Failed!",
         footer: '<a href="#">Why do I have this issue?</a>'
       });
